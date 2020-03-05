@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+
+</head>
+<body bgcolor="white">
+
+	<script>
+		function validateForm() {
+			var x = document.getElementById("name").value;
+			var y = document.getElementById("address").value;
+			var re = /[0-9]/;
+
+			if (x == '') {
+				alert("Name must be filled out");
+				return false;
+			}
+
+			if (x.length < 3) {
+				alert("length should not less then 3");
+				return false;
+			}
+
+			else if (y == "") {
+				alert("Address Required!");
+				return false;
+			} else {
+				return true;
+			}
+
+		}
+	</script>
+
+	<form method="get" action="RegisterServlet"
+		onclick="return validateForm()">
+
+		<label><b>Name:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+			type="text" name="name" id="name"></b><br> <br> <label><b></>Address:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+			type="text" name="add" id="address"><br> <br> <label><b>Password:</b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+			type="password" name="pass1"><br> <br> <label><b>Confirm
+				Password:</b></label><input type="password" name="pass2"><br> <br>
+		<input type="submit" value="Confirm">
+	</form>
+</body>
+</html>
